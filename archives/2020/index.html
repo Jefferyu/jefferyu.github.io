@@ -6,7 +6,7 @@
 <meta property="og:description" content="探索未知">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Jeffer Yu">
-<meta name="twitter:card" content="summary"><title>归档 | JefferYu's blog</title><link ref="canonical" href="http://jefferyu.github.io/archives/2020/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.1.1"><script>var Stun = window.Stun || {};
+<meta name="twitter:card" content="summary"><title>归档 | JefferYu's blog</title><link ref="canonical" href="http://jefferyu.github.io/archives/2020/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.1.1"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -107,32 +107,26 @@ if (true || false) {
   initQuicklink();
 } else {
   window.addEventListener('DOMContentLoaded', initQuicklink, false);
-}</script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script data-pjax="">function loadValine () {
-  var GUEST_INFO = ['nick', 'mail', 'link'];
-  var guest_info = 'nick,mail';
+}</script><script src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@latest/bsz.pure.mini.js" async></script></div><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js" data-pjax=""></script><script src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js" data-pjax=""></script><script data-pjax="">function loadGitalk () {
+  if (!document.getElementById('gitalk-container')) {
+    return;
+  }
 
-  guest_info = guest_info.split(',').filter(function(item) {
-    return GUEST_INFO.indexOf(item) > -1;
+  var gitalk = new Gitalk({
+    id: md5(window.location.pathname.slice(1)),
+    clientID: 'ba152172efc7915bfc2d',
+    clientSecret: 'e69d5653cbfdaa66eaea7b8acabf73bd9936ba5b',
+    repo: 'https://github.com/Jefferyu/jefferyu.github.io',
+    owner: 'Jefferyu',
+    admin: ['Jefferyu'],
+    distractionFreeMode: 'false',
+    language: 'zh-CN'
   });
-  new Valine({
-    el: '#valine-container',
-    appId: '0NKPltTbhVm97SNmB2MnBOBp-gzGzoHsz',
-    appKey: 'XjQjhch8gTlp8WyaLUEfqmMA',
-    notify: true,
-    verify: true,
-    placeholder: 'Just go go',
-    avatar: 'mp',
-    meta: guest_info,
-    pageSize: '10' || 10,
-    visitor: true,
-    recordIP: false,
-    lang: 'zh-cn' || 'zh-cn',
-    path: window.location.pathname
-  });
+  gitalk.render('gitalk-container');
 }
 
 if (true) {
-  loadValine();
+  loadGitalk();
 } else {
-  window.addEventListener('DOMContentLoaded', loadValine, false);
+  window.addEventListener('DOMContentLoaded', loadGitalk, false);
 }</script><script src="/js/utils.js?v=2.1.1"></script><script src="/js/stun-boot.js?v=2.1.1"></script><script src="/js/scroll.js?v=2.1.1"></script><script src="/js/header.js?v=2.1.1"></script><script src="/js/sidebar.js?v=2.1.1"></script></body></html>
